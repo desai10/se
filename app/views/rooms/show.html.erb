@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @room.title %>
+</p>
+
+<p>
+  <strong>Editor text:</strong>
+  <%= @room.editor_text %>
+</p>
+<table>
+  <tbody>
+    <% @room.messages.each do |message| %>
+      <tr>
+        <td><%= message.content %></td>
+        <td><%= message.username %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_room_path(@room) %> |
+<%= link_to 'Back', rooms_path %>
